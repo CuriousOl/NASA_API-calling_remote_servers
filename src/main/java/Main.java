@@ -36,10 +36,11 @@ public class Main {
 
         //если материалом дня является видео, а не фото, то записываем ссылку на видео в файл
         if(post.getMedia_type().equals("video")) {
-            String explanation = post.getExplanation() + "\n";
-            try (FileOutputStream fos = new FileOutputStream(post.getDate() + "_link_to_video.txt")) {
+            String explanation = post.getExplanation() + "\n\n" + "[link to video]" + "(";
+            try (FileOutputStream fos = new FileOutputStream(post.getDate() + "_link_to_video.md")) {
                 fos.write(explanation.getBytes(StandardCharsets.UTF_8));
                 fos.write(post.getUrl().getBytes(StandardCharsets.UTF_8));
+                fos.write(")".getBytes(StandardCharsets.UTF_8));
             } catch (IOException e) {
                 e.printStackTrace();
             }
