@@ -11,4 +11,16 @@ public class Post {
     public String getUrl() {
         return url;
     }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getExplanation() {
+        return explanation;
+    }
+
+    public String getMedia_type() {
+        return media_type;
+    }
 }
